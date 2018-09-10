@@ -1,1 +1,9 @@
-include ':app'
+include 'app', 'liferay-screens'
+
+include 'liferay-screens'
+project(':liferay-screens').projectDir = new File(settingsDir, '../liferay-screens/android/library')
+project(':liferay-screens').name = 'liferay-screens'
+
+include 'liferay-lexicon-viewset'
+project(':liferay-lexicon-viewset').projectDir = new File(settingsDir, '../liferay-screens/android/viewsets/lexicon')
+project(':liferay-lexicon-viewset').name = 'liferay-lexicon-viewset'
