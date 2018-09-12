@@ -1,5 +1,6 @@
 package mobile.liferay.com.formsscreenletdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,13 +23,13 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
     @Override
     public void onLoginSuccess(User user) {
-        Toast.makeText(LoginActivity.this, "Login is Successful!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, FormsActivity.class);
+        startActivity(intent);
 
     }
 
     @Override
     public void onLoginFailure(Exception e) {
-        Toast.makeText(LoginActivity.this, "Login Faild!", Toast.LENGTH_SHORT).show();
         Log.e("Test", e.getMessage());
     }
 
