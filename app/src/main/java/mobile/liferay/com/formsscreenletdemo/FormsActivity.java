@@ -29,7 +29,7 @@ public class FormsActivity extends AppCompatActivity {
         }
     }
 
-    private String getResourcePath(){
+    private String getResourcePath() {
         String serverUrl = getResources().getString(R.string.liferay_server);
         String formEndpoint = "/o/api/p/form-instance/%d?embedded=structure";
 
