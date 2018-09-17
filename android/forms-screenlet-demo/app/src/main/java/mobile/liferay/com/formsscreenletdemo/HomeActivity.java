@@ -9,14 +9,12 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity
     implements View.OnClickListener {
 
-    Button formButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        formButton = findViewById(R.id.forms_button);
+        Button formButton = findViewById(R.id.forms_button);
         formButton.setOnClickListener(this);
     }
 
