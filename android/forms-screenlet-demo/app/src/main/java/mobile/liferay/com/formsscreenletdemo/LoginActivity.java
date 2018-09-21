@@ -2,6 +2,7 @@ package mobile.liferay.com.formsscreenletdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -17,7 +18,8 @@ import com.liferay.mobile.screens.util.AndroidUtil;
  * @author Luísa Lima
  */
 public class LoginActivity extends AppCompatActivity implements LoginListener {
-	CoordinatorLayout coordinatorLayout;
+
+	private CoordinatorLayout coordinatorLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,6 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
 		getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.login_status_bar_color));
 		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
 	}
 
 	@Override
