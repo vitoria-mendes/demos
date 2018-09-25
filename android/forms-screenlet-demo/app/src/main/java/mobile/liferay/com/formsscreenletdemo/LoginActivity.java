@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.util.AndroidUtil;
+import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
 
 /**
  * @author Luísa Lima
@@ -31,8 +32,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 		LoginScreenlet loginScreenlet = findViewById(R.id.login);
 		loginScreenlet.setListener(this);
 
-		getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.login_status_bar_color));
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+		FormsUtil.setLightStatusBar(this, getWindow());
 	}
 
 	@Override

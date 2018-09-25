@@ -4,9 +4,11 @@
 	<string name="default_password">test</string>
 	<string name="form_button">Form</string>
 	<string name="get_insurance_quote">GET INSURANCE QUOTE</string>
+	<string name="insurance_quote">Insurance Quote</string>
 	<string name="insurances">Insurances</string>
 	<string name="home">Home</string>
 	<string name="your_next_car_insurance">Your next car insurance.</string>
+	<string name="loading_form">Loading Form....</string>
 	<string name="login">Login</string>
 	<string name="login_failed">Login Failed</string>
 	<string name="password">Password</string>

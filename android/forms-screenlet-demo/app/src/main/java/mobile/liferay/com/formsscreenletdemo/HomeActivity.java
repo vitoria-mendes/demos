@@ -26,8 +26,6 @@ import okhttp3.HttpUrl;
  */
 public class HomeActivity extends AppCompatActivity {
 
-	private Thing thing;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 		Button formButton = findViewById(R.id.forms_button);
 		formButton.setOnClickListener(this::startFormActivity);
 
-		getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.login_status_bar_color));
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+		FormsUtil.setLightStatusBar(this, getWindow());
 
 		if (savedInstanceState == null) {
 			checkForDraft();
@@ -63,10 +60,7 @@ public class HomeActivity extends AppCompatActivity {
 	}
 
 	private Unit onThingLoaded(Thing thing) {
-		this.thing = thing;
-
 		loadDraft(thing);
-
 		return Unit.INSTANCE;
 	}
 
