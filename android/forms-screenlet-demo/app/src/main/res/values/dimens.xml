@@ -18,7 +18,14 @@
 	<dimen name="toolbar_elevation">4dp</dimen>
 	<dimen name="toolbar_title_margin_left">24dp</dimen>
 	<dimen name="toolbar_title_text_size">20sp</dimen>
-
-
-
+	<dimen name="dialog_side_padding">20dp</dimen>
+	<dimen name="dialog_top_padding">32dp</dimen>
+	<dimen name="dialog_title_margin_top">20dp</dimen>
+	<dimen name="dialog_title_text_size">24sp</dimen>
+	<dimen name="dialog_subtitle_margin_top">12dp</dimen>
+	<dimen name="dialog_subtitle_text_size">15sp</dimen>
+	<dimen name="dialog_button_margin_top">24dp</dimen>
+	<dimen name="dialog_button_text_size">15sp</dimen>
+	<dimen name="dialog_button_margin">12dp</dimen>
+	<dimen name="dialog_button_size_padding">18dp</dimen>
 </resources>

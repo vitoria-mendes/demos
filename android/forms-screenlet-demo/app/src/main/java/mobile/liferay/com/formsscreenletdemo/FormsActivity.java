@@ -4,9 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ProgressBar;
-import com.liferay.apio.consumer.ApioConsumerKt;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
+import mobile.liferay.com.formsscreenletdemo.util.Constants;
+import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
 
 /**
  * @author Luísa Lima
@@ -15,7 +16,6 @@ public class FormsActivity extends AppCompatActivity {
 
 	private ThingScreenlet forms;
 	private ProgressBar progressBar;
-	private long formInstanceId = 36466;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +30,14 @@ public class FormsActivity extends AppCompatActivity {
 		}
 	}
 
-	private String getResourcePath() {
-		String serverUrl = getResources().getString(R.string.liferay_server);
-		String formEndpoint = "/o/api/p/form-instance/%d?embedded=structure";
-
-		return serverUrl + String.format(formEndpoint, formInstanceId);
-	}
-
 	private void loadResource() {
-		String url = getResourcePath();
+		String url =
+			FormsUtil.getResourcePath(getResources().getString(R.string.liferay_server), Constants.FORM_INSTANCE_ID);
 
 		progressBar.setVisibility(View.VISIBLE);
-
 		forms.setVisibility(View.GONE);
-		forms.load(url, Detail.INSTANCE, ApioConsumerKt.getCredentials(), thingScreenlet -> {
+
+		forms.load(url, Detail.INSTANCE, null, thingScreenlet -> {
 			progressBar.setVisibility(View.GONE);
 			forms.setVisibility(View.VISIBLE);
 

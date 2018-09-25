@@ -14,4 +14,8 @@
 	<string name="we_have_coverage_options_to_protect_your_car_against_just_about_anything">We have coverage options to protect your car against just about anything.</string>
 	<string name="your_login">Your Login</string>
 	<string name="your_password">Your Password</string>
+    <string name="continue_insurance_quote_form">Continue Insurance Quote form?</string>
+    <string name="you_started_a_form_at_our_website">You started a form at our website.</string>
+    <string name="not_now">NOT NOW</string>
+    <string name="continue_">CONTINUE</string>
 </resources>
