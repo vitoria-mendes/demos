@@ -33,20 +33,22 @@
 	<FrameLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:gravity="center"
+
 		>
 		<com.liferay.mobile.screens.base.ModalProgressBarWithLabel
 			android:id="@+id/liferay_modal_progress"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:visibility="gone"
-			>
-		</com.liferay.mobile.screens.base.ModalProgressBarWithLabel>
+			/>
+
+		<include layout="@layout/error_view"/>
 
 		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-			android:id="@+id/forms"
+			android:id="@+id/forms_screenlet"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			/>
+
 	</FrameLayout>
 </LinearLayout>

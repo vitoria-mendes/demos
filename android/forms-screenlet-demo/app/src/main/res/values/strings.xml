@@ -20,4 +20,5 @@
     <string name="you_started_a_form_at_our_website">You started a form at our website.</string>
     <string name="not_now">NOT NOW</string>
     <string name="continue_">CONTINUE</string>
+    <string name="could_not_load_form">Could not load Form</string>
 </resources>
