@@ -30,7 +30,7 @@ public class FormsActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_forms);
 
 		formsScreenlet = findViewById(R.id.forms_screenlet);
-		errorLayout = findViewById(R.id.error_view);
+		errorLayout = findViewById(R.id.form_detail_error_view);
 		progressBar = findViewById(R.id.liferay_modal_progress);
 		progressBar.disableDimBackground();
 

@@ -42,7 +42,7 @@
 			android:visibility="gone"
 			/>
 
-		<include layout="@layout/error_view"/>
+		<include layout="@layout/form_detail_error_view"/>
 
 		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
 			android:id="@+id/forms_screenlet"
