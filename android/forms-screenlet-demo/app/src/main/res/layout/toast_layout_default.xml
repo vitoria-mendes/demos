@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/toast_layout_default"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/toast_background_drawable"
+	android:padding="@dimen/toast_padding"
+	>
+
+	<TextView
+		android:id="@+id/toast_message"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/your_information_was_successfully_sent"
+		android:textColor="@color/white"
+		android:textSize="@dimen/dialog_button_text_size"
+		/>
+
+</FrameLayout>
