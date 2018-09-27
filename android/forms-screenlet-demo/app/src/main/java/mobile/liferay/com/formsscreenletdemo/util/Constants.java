@@ -4,5 +4,5 @@ package mobile.liferay.com.formsscreenletdemo.util;
  * @author Victor Oliveira
  */
 public interface Constants {
-	long FORM_INSTANCE_ID = 37605;
+	long FORM_INSTANCE_ID = 36805;
 }
