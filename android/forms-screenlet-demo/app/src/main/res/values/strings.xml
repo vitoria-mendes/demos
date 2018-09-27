@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">FormsScreenletDemo</string>
+	<string name="app_name">TGF</string>
 	<string name="default_email">test@liferay.com</string>
 	<string name="default_password">test</string>
 	<string name="form_button">Form</string>
