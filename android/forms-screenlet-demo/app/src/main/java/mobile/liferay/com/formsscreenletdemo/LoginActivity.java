@@ -30,9 +30,6 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		LiferayScreensContext.init(this);
-		SessionContext.loadStoredCredentialsAndServer(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
-
 		coordinatorLayout = findViewById(R.id.coordinator);
 		loginScreenlet = findViewById(R.id.login);
 		loginScreenlet.setListener(this);
@@ -40,10 +37,6 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 		FormsUtil.setLightStatusBar(this, getWindow());
 
 		setDefaultValues();
-
-		if (SessionContext.hasUserInfo()) {
-			startHomeActivity();
-		}
 	}
 
 	private void startHomeActivity() {
