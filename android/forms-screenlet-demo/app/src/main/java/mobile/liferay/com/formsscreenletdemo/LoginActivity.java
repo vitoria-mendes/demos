@@ -2,13 +2,11 @@ package mobile.liferay.com.formsscreenletdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.EditText;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
@@ -43,17 +41,15 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
 		setDefaultValues();
 
-		if(SessionContext.hasUserInfo()){
+		if (SessionContext.hasUserInfo()) {
 			startHomeActivity();
 		}
-
 	}
 
-	private void startHomeActivity(){
+	private void startHomeActivity() {
 		Intent intent = new Intent(this, HomeActivity.class);
 		finish();
 		startActivity(intent);
-
 	}
 
 	@Override
