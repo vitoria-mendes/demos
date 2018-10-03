@@ -3,13 +3,17 @@ package mobile.liferay.com.formsscreenletdemo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
+import com.liferay.apio.consumer.graph.ApioGraph;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
@@ -28,11 +32,13 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author Luísa Lima
  */
-public class FormsActivity extends AppCompatActivity implements ScreenletEvents {
+public class FormsActivity extends AppCompatActivity
+	implements ScreenletEvents, SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnChildScrollUpCallback {
 
 	private LinearLayout errorLayout;
 	private ThingScreenlet formsScreenlet;
 	private ModalProgressBarWithLabel progressBar;
+	private SwipeRefreshLayout swipeRefreshLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +48,10 @@ public class FormsActivity extends AppCompatActivity implements ScreenletEvents 
 		formsScreenlet = findViewById(R.id.forms_screenlet);
 		errorLayout = findViewById(R.id.form_detail_error_view);
 		progressBar = findViewById(R.id.liferay_modal_progress);
+		swipeRefreshLayout = findViewById(R.id.pull_to_refresh);
 		progressBar.disableDimBackground();
 		formsScreenlet.setScreenletEvents(this);
+		swipeRefreshLayout.setOnRefreshListener(this);
 
 		FormsUtil.setLightStatusBar(this, getWindow());
 
@@ -59,18 +67,41 @@ public class FormsActivity extends AppCompatActivity implements ScreenletEvents 
 		progressBar.show(getString(R.string.loading_form));
 		formsScreenlet.setVisibility(View.GONE);
 
+		ApioGraph.INSTANCE.clearGraph();
+
 		formsScreenlet.load(url, Detail.INSTANCE, null, thingScreenlet -> {
-			progressBar.hide();
+			hideProgress();
 			errorLayout.setVisibility(View.GONE);
-			formsScreenlet.setVisibility(View.VISIBLE);
+
+			recyclerViewWorkaround();
 
 			return Unit.INSTANCE;
 		}, e -> showError(e.getMessage()));
 	}
 
-	private Unit showError(String message) {
+	/*
+	 * TODO: Find another solution
+	 */
+	private void recyclerViewWorkaround() {
+		ScrollView scrollView = formsScreenlet.findViewById(R.id.multipage_scroll_view);
+
+		swipeRefreshLayout.getViewTreeObserver().addOnScrollChangedListener(() -> {
+			if (scrollView != null && scrollView.getScrollY() == 0) {
+				swipeRefreshLayout.setEnabled(true);
+			} else {
+				swipeRefreshLayout.setEnabled(false);
+			}
+		});
+	}
+
+	private void hideProgress() {
 		progressBar.hide();
-		errorLayout.setVisibility(View.VISIBLE);
+		swipeRefreshLayout.setRefreshing(false);
+		formsScreenlet.setVisibility(View.VISIBLE);
+	}
+
+	private Unit showError(String message) {
+		hideProgress();
 
 		int icon = R.drawable.default_error_icon;
 		int textColor = Color.WHITE;
@@ -110,5 +141,16 @@ public class FormsActivity extends AppCompatActivity implements ScreenletEvents 
 	public <T extends BaseView> Integer onGetCustomLayout(@NotNull ThingScreenlet screenlet, @Nullable T parentView,
 		@NotNull Thing thing, @NotNull Scenario scenario) {
 		return null;
+	}
+
+	@Override
+	public void onRefresh() {
+		loadResource();
+	}
+
+	@Override
+	public boolean canChildScrollUp(@NonNull SwipeRefreshLayout parent,
+		@android.support.annotation.Nullable View child) {
+		return true;
 	}
 }
