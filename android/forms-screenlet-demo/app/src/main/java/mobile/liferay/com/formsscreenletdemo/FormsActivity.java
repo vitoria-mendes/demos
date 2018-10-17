@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
-import com.liferay.apio.consumer.graph.ApioGraph;
+import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
@@ -67,7 +67,7 @@ public class FormsActivity extends AppCompatActivity
 		progressBar.show(getString(R.string.loading_form));
 		formsScreenlet.setVisibility(View.GONE);
 
-		ApioGraph.INSTANCE.clearGraph();
+		ThingsCache.clearCache();
 
 		formsScreenlet.load(url, Detail.INSTANCE, null, thingScreenlet -> {
 			hideProgress();

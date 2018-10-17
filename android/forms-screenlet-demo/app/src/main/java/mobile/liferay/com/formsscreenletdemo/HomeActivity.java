@@ -14,8 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.liferay.apio.consumer.ApioConsumer;
-import com.liferay.apio.consumer.authenticator.BasicAuthenticator;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
@@ -23,9 +21,9 @@ import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
 import com.liferay.mobile.screens.ddm.form.service.APIOFetchLatestDraftService;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
+import mobile.liferay.com.formsscreenletdemo.service.APIOFetchResourceService;
 import mobile.liferay.com.formsscreenletdemo.util.Constants;
 import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
-import okhttp3.HttpUrl;
 
 /**
  * @author Luísa Lima
@@ -91,18 +89,8 @@ public class HomeActivity extends AppCompatActivity {
 	private void checkForDraft() {
 		String server = getResources().getString(R.string.liferay_server);
 		String url = FormsUtil.getResourcePath(server, Constants.FORM_INSTANCE_ID);
-		HttpUrl httpUrl = HttpUrl.parse(url);
 
-		try {
-			String credentials = SessionContext.getCredentialsFromCurrentSession();
-			ApioConsumer apioConsumer = ApioConsumer.INSTANCE;
-
-			apioConsumer.setAuthenticator(new BasicAuthenticator(credentials));
-			apioConsumer.fetch(httpUrl, this::onThingLoaded, this::logError);
-		} catch (Exception e) {
-			LiferayLogger.e(e.getMessage());
-		}
-
+		new APIOFetchResourceService().fetchResource(url, this::onThingLoaded, this::logError);
 	}
 
 	private Unit logError(Exception e) {
