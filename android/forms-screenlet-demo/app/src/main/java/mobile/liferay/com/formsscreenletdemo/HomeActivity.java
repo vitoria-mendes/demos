@@ -74,13 +74,17 @@ public class HomeActivity extends AppCompatActivity {
 
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
+			case R.id.blog_postings:
+				Intent intentBlogPostings = new Intent(HomeActivity.this, BlogPostingsActivity.class);
+				startActivity(intentBlogPostings);
+				break;
 			case R.id.sign_out:
 
 				SessionContext.logout();
 				SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
-				Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+				Intent intentLogin = new Intent(HomeActivity.this, LoginActivity.class);
 				finish();
-				startActivity(intent);
+				startActivity(intentLogin);
 
 				break;
 		}

@@ -41,6 +41,12 @@
         <activity android:name=".SignUpActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <activity android:name=".BlogPostingsActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name=".BlogPostingItemActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 
 </manifest>
