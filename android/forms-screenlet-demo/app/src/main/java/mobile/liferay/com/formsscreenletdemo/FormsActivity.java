@@ -25,6 +25,7 @@ import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.viewsets.defaultviews.ddm.events.FormEvents;
 import kotlin.Unit;
 import mobile.liferay.com.formsscreenletdemo.util.Constants;
+import mobile.liferay.com.formsscreenletdemo.util.CredentialsUtil;
 import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -69,7 +70,7 @@ public class FormsActivity extends AppCompatActivity
 
 		ThingsCache.clearCache();
 
-		formsScreenlet.load(url, Detail.INSTANCE, null, thingScreenlet -> {
+		formsScreenlet.load(url, Detail.INSTANCE, CredentialsUtil.getCredentials(), thingScreenlet -> {
 			hideProgress();
 			errorLayout.setVisibility(View.GONE);
 
