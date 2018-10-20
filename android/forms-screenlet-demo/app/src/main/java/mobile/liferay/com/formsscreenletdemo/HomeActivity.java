@@ -44,8 +44,8 @@ public class HomeActivity extends AppCompatActivity {
 	private ThingScreenlet userPortrait;
 	private Toolbar toolbar;
 	private TextView userName;
-	private final int PORTRAIT_WiDTH = 90;
-	private final int PORTRAIT_HEIGHT = 90;
+	private static final int PORTRAIT_WiDTH = 90;
+	private static final int PORTRAIT_HEIGHT = 90;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,35 +94,42 @@ public class HomeActivity extends AppCompatActivity {
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.blog_postings:
-				Intent intentBlogPostings = new Intent(HomeActivity.this, BlogPostingsActivity.class);
-				startActivity(intentBlogPostings);
+				startBlogPostingsActivity();
 				break;
 			case R.id.take_care:
 				startTakeCareListActivity();
+				break;
 			case R.id.special_offers:
 				startSpecialOffersActivity();
-
 				break;
-
 			case R.id.sign_out:
-
-				SessionContext.logout();
-				SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
-				Intent intentLogin = new Intent(HomeActivity.this, LoginActivity.class);
-				finish();
-				startActivity(intentLogin);
-
+				signOut();
 				break;
 		}
 	}
 
-	private void startTakeCareListActivity() {
-		Intent intent = new Intent(this, TakeCareListActivity.class);
-		startActivity(intent);
+	private void signOut() {
+		SessionContext.logout();
+		SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
+
+		finish();
+
+		Intent intentLogin = new Intent(HomeActivity.this, LoginActivity.class);
+		startActivity(intentLogin);
+	}
+
+	private void startBlogPostingsActivity() {
+		Intent intentBlogPostings = new Intent(HomeActivity.this, BlogPostingsActivity.class);
+		startActivity(intentBlogPostings);
 	}
 
 	private void startSpecialOffersActivity() {
 		Intent intent = new Intent(this, SpecialOffersActivity.class);
+		startActivity(intent);
+	}
+
+	private void startTakeCareListActivity() {
+		Intent intent = new Intent(this, TakeCareListActivity.class);
 		startActivity(intent);
 	}
 
