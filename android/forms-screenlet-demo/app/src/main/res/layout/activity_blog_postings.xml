@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	android:gravity="center"
 	android:orientation="vertical"
-	tools:context="mobile.liferay.com.formsscreenletdemo.com.liferay.com.formsscreenletdemo.BlogPostingsActivity"
+	tools:context="com.liferay.mobile.formsscreenletdemo.BlogPostingsActivity"
 	>
 
 	<android.support.v7.widget.Toolbar
