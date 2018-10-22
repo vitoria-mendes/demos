@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,6 +12,7 @@ import com.liferay.mobile.screens.asset.list.AssetListScreenlet;
 import com.liferay.mobile.screens.base.list.BaseListListener;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import java.util.List;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 public class TakeCareListActivity extends AppCompatActivity implements BaseListListener<AssetEntry> {
 

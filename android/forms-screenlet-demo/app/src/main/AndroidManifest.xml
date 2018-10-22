@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="mobile.liferay.com.formsscreenletdemo">
+	package="com.liferay.mobile.formsscreenletdemo">
 
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.CAMERA"/>
@@ -15,17 +15,17 @@
 		android:supportsRtl="true"
 		android:theme="@style/lexicon_theme">
 		<activity
-			android:name=".LoginActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.LoginActivity"
 			android:windowSoftInputMode="adjustResize">
 		</activity>
-		<activity android:name=".FormsActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.FormsActivity">
 		</activity>
 		<activity
-			android:name=".HomeActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.HomeActivity"
 			android:theme="@style/TransparentTheme">
 		</activity>
 		<activity
-			android:name=".SplashActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.SplashActivity"
 			android:fitsSystemWindows="true"
 			android:theme="@style/CustomActionBar">
 			<intent-filter>
@@ -34,23 +34,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="com.liferay.mobile.formsscreenletdemo.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name=".SignUpActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.SignUpActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name=".BlogPostingsActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.BlogPostingsActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name=".BlogPostingItemActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.BlogPostingItemActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-		<activity android:name=".TakeCareListActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.TakeCareListActivity">
 		</activity>
-		<activity android:name=".TakeCareVideoActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.TakeCareVideoActivity">
 		</activity>
-		<activity android:name=".SpecialOffersActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.SpecialOffersActivity">
 		</activity>
 	</application>
 </manifest>

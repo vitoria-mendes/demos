@@ -1,16 +1,15 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.liferay.apio.consumer.cache.ThingsCache;
+import com.liferay.mobile.formsscreenletdemo.util.CredentialsUtil;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
 import kotlin.Unit;
-import mobile.liferay.com.formsscreenletdemo.util.BlogsUtil;
-import mobile.liferay.com.formsscreenletdemo.util.Constants;
-import mobile.liferay.com.formsscreenletdemo.util.CredentialsUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 /**
  * @author Paulo Cruz

@@ -8,7 +8,7 @@
 	android:layout_height="match_parent"
 	android:fitsSystemWindows="true"
 	tools:openDrawer="start"
-	tools:context="mobile.liferay.com.formsscreenletdemo.HomeActivity"
+	tools:context="mobile.liferay.com.formsscreenletdemo.com.liferay.com.formsscreenletdemo.HomeActivity"
 	>
 
 	<include

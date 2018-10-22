@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo.util;
+package com.liferay.mobile.formsscreenletdemo.util;
 
 /**
  * @author Victor Oliveira

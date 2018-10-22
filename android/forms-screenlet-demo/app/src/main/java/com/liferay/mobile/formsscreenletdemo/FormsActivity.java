@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
+import com.liferay.mobile.formsscreenletdemo.util.CredentialsUtil;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
@@ -24,9 +25,9 @@ import com.liferay.mobile.screens.thingscreenlet.screens.views.Scenario;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.viewsets.defaultviews.ddm.events.FormEvents;
 import kotlin.Unit;
-import mobile.liferay.com.formsscreenletdemo.util.Constants;
-import mobile.liferay.com.formsscreenletdemo.util.CredentialsUtil;
-import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.util.Constants;
+import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

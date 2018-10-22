@@ -1,51 +1,60 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.liferay.mobile.screens.auth.forgotpassword.ForgotPasswordListener;
-import com.liferay.mobile.screens.auth.forgotpassword.ForgotPasswordScreenlet;
+import com.liferay.mobile.screens.auth.signup.SignUpListener;
+import com.liferay.mobile.screens.auth.signup.SignUpScreenlet;
+import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.util.AndroidUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
 
-public class ForgotPasswordActivity extends AppCompatActivity implements ForgotPasswordListener {
+public class SignUpActivity extends AppCompatActivity implements SignUpListener {
 
 	private CoordinatorLayout coordinatorLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_forgot_password);
+		setContentView(R.layout.activity_sign_up);
 
-		coordinatorLayout = findViewById(R.id.coordinator_forgot_password);
+		coordinatorLayout = findViewById(R.id.coordinator_signup);
 
-		ForgotPasswordScreenlet forgotPasswordScreenlet = findViewById(R.id.forgot_password_screenlet);
-		forgotPasswordScreenlet.setAnonymousApiPassword(getString(R.string.liferay_anonymousApiPassword));
-		forgotPasswordScreenlet.setAnonymousApiUserName(getString(R.string.liferay_anonymousApiUserName));
-		forgotPasswordScreenlet.setListener(this);
+		SignUpScreenlet signUpScreenlet = findViewById(R.id.signup_screenlet);
+		signUpScreenlet.setAnonymousApiPassword(getString(R.string.liferay_anonymousApiPassword));
+		signUpScreenlet.setAnonymousApiUserName(getString(R.string.liferay_anonymousApiUserName));
+		signUpScreenlet.setListener(this);
 	}
 
 	@Override
-	public void onForgotPasswordRequestSuccess(boolean passwordSent) {
+	public void onSignUpSuccess(User user) {
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.green_default);
 		String message = getString(R.string.request_completed);
 
 		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE);
+
+		startLoginActivity();
 	}
 
 	@Override
-	public void onForgotPasswordRequestFailure(Exception e) {
+	public void onSignUpFailure(Exception e) {
 		int icon = R.drawable.default_error_icon;
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
-
 		String message = getString(R.string.request_failed);
 
 		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
 			icon);
 	}
 
+	private void startLoginActivity() {
+		Intent intent = new Intent(this, LoginActivity.class);
+		finish();
+		startActivity(intent);
+	}
 }

@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Context;
 import android.util.AttributeSet;

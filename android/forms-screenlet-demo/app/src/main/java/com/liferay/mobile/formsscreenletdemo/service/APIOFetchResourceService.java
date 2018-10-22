@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo.service;
+package com.liferay.mobile.formsscreenletdemo.service;
 
 import com.liferay.apio.consumer.authenticator.ApioAuthenticator;
 import com.liferay.apio.consumer.authenticator.BasicAuthenticator;

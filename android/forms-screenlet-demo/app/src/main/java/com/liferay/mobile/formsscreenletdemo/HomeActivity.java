@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,10 +28,11 @@ import com.liferay.mobile.screens.thingscreenlet.screens.views.custom.PersonPort
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
-import mobile.liferay.com.formsscreenletdemo.service.APIOFetchResourceService;
-import mobile.liferay.com.formsscreenletdemo.util.Constants;
-import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
-import mobile.liferay.com.formsscreenletdemo.util.PersonUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
+import com.liferay.mobile.formsscreenletdemo.util.Constants;
+import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
+import com.liferay.mobile.formsscreenletdemo.util.PersonUtil;
 
 /**
  * @author Luísa Lima
@@ -44,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
 	private ThingScreenlet userPortrait;
 	private Toolbar toolbar;
 	private TextView userName;
-	private static final int PORTRAIT_WiDTH = 90;
+	private static final int PORTRAIT_WIDTH = 90;
 	private static final int PORTRAIT_HEIGHT = 90;
 
 	@Override
@@ -185,7 +186,7 @@ public class HomeActivity extends AppCompatActivity {
 		PersonPortraitView portraitView =
 			thingScreenlet.findViewById(com.liferay.mobile.screens.R.id.image_view);
 
-		portraitView.getImageView().getLayoutParams().height = PORTRAIT_WiDTH;
+		portraitView.getImageView().getLayoutParams().height = PORTRAIT_WIDTH;
 		portraitView.getImageView().getLayoutParams().width = PORTRAIT_HEIGHT;
 	}
 

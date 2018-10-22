@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:fitsSystemWindows="true"
-	tools:context="mobile.liferay.com.formsscreenletdemo.HomeActivity"
+	tools:context="mobile.liferay.com.formsscreenletdemo.com.liferay.com.formsscreenletdemo.HomeActivity"
 	>
 
 	<android.support.design.widget.AppBarLayout

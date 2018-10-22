@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
@@ -11,6 +11,7 @@ import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.webcontent.WebContent;
 import com.liferay.mobile.screens.webcontent.display.WebContentDisplayListener;
 import com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 public class SpecialOffersActivity extends AppCompatActivity implements WebContentDisplayListener {
 

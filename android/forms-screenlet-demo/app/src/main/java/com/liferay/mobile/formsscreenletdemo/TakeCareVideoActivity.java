@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
@@ -12,6 +12,7 @@ import com.liferay.mobile.screens.asset.display.AssetDisplayListener;
 import com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet;
 import com.liferay.mobile.screens.base.BaseScreenlet;
 import com.liferay.mobile.screens.util.AndroidUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 public class TakeCareVideoActivity extends AppCompatActivity implements AssetDisplayListener,
 	AssetDisplayInnerScreenletListener {

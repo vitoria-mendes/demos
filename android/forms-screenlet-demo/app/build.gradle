@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
 	compileSdkVersion 27
 	defaultConfig {
-		applicationId "mobile.liferay.com.formsscreenletdemo"
+		applicationId "com.liferay.mobile.formsscreenletdemo"
 		minSdkVersion 23
 		targetSdkVersion 27
 		versionCode 1

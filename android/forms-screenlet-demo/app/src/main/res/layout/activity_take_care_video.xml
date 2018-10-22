@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical"
 	android:gravity="center"
-	tools:context="mobile.liferay.com.formsscreenletdemo.TakeCareVideoActivity"
+	tools:context="mobile.liferay.com.formsscreenletdemo.com.liferay.com.formsscreenletdemo.TakeCareVideoActivity"
 	>
 
 	<com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet

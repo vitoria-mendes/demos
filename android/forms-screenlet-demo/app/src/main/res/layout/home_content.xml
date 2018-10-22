@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:theme="@style/lexicon_theme"
-	tools:context="mobile.liferay.com.formsscreenletdemo.HomeActivity"
+	tools:context="mobile.liferay.com.formsscreenletdemo.com.liferay.com.formsscreenletdemo.HomeActivity"
 	>
 
 	<ImageView

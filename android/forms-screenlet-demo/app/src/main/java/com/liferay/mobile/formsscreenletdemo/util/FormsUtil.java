@@ -1,10 +1,10 @@
-package mobile.liferay.com.formsscreenletdemo.util;
+package com.liferay.mobile.formsscreenletdemo.util;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
-import mobile.liferay.com.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 /**
  * @author Victor Oliveira

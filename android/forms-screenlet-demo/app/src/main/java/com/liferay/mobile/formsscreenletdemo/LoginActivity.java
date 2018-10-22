@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +15,8 @@ import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.util.AndroidUtil;
-import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
+import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
 
 /**
  * @author Luísa Lima

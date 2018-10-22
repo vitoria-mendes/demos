@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.liferay.mobile.screens.context.LiferayScreensContext;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
+import com.liferay.mobile.formsscreenletdemo.R;
 
 public class SplashActivity extends AppCompatActivity {
 
