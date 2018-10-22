@@ -53,8 +53,8 @@
 			android:id="@+id/liferay_forgot_link"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="start"
-			android:gravity="center"
+			android:layout_gravity="end"
+			android:layout_marginTop="@dimen/login_text_size"
 			android:text="@string/forgot_password"
 			android:textStyle="bold"
 			/>

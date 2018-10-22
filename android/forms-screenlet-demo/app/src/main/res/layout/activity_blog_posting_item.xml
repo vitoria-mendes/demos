@@ -23,8 +23,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_vertical"
-			android:layout_marginLeft="@dimen/toolbar_title_margin_left"
-			android:text="@string/insurance_quote"
+			android:layout_marginStart="@dimen/toolbar_title_margin_left"
+			android:text="@string/insurance_blog"
 			android:textSize="@dimen/toolbar_title_text_size"
 			/>
 
@@ -40,11 +40,20 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			>
-			<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-				android:id="@+id/blog_item_screenlet"
+
+			<ScrollView
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				/>
+				>
+
+				<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+					android:id="@+id/blog_item_screenlet"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					/>
+
+			</ScrollView>
+
 		</android.support.v4.widget.SwipeRefreshLayout>
 
 	</FrameLayout>

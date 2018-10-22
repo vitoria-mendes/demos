@@ -8,6 +8,27 @@
 	tools:context="com.liferay.mobile.formsscreenletdemo.TakeCareListActivity"
 	>
 
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:elevation="@dimen/toolbar_elevation"
+		android:title="@string/insurances"
+		android:titleTextColor="@color/toolbar_text_color"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginStart="@dimen/toolbar_title_margin_left"
+			android:text="@string/take_care_of_your_car"
+			android:textSize="@dimen/toolbar_title_text_size"
+			/>
+
+	</android.support.v7.widget.Toolbar>
+
 	<com.liferay.mobile.screens.asset.list.AssetListScreenlet
 		android:id="@+id/asset_list_screenlet"
 		android:layout_width="match_parent"

@@ -28,7 +28,6 @@ import com.liferay.mobile.screens.thingscreenlet.screens.views.custom.PersonPort
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
-import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
@@ -66,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 
 		if (savedInstanceState == null) {
 			try {
-				loadResource();
+				loadPortrait();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -95,13 +94,13 @@ public class HomeActivity extends AppCompatActivity {
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.blog_postings:
-				startBlogPostingsActivity();
+				startActivity(BlogPostingsActivity.class);
 				break;
 			case R.id.take_care:
-				startTakeCareListActivity();
+				startActivity(TakeCareListActivity.class);
 				break;
 			case R.id.special_offers:
-				startSpecialOffersActivity();
+				startActivity(SpecialOffersActivity.class);
 				break;
 			case R.id.sign_out:
 				signOut();
@@ -115,22 +114,11 @@ public class HomeActivity extends AppCompatActivity {
 
 		finish();
 
-		Intent intentLogin = new Intent(HomeActivity.this, LoginActivity.class);
-		startActivity(intentLogin);
+		startActivity(LoginActivity.class);
 	}
 
-	private void startBlogPostingsActivity() {
-		Intent intentBlogPostings = new Intent(HomeActivity.this, BlogPostingsActivity.class);
-		startActivity(intentBlogPostings);
-	}
-
-	private void startSpecialOffersActivity() {
-		Intent intent = new Intent(this, SpecialOffersActivity.class);
-		startActivity(intent);
-	}
-
-	private void startTakeCareListActivity() {
-		Intent intent = new Intent(this, TakeCareListActivity.class);
+	private void startActivity(Class<?> clazz) {
+		Intent intent = new Intent(this, clazz);
 		startActivity(intent);
 	}
 
@@ -155,19 +143,12 @@ public class HomeActivity extends AppCompatActivity {
 		new APIOFetchLatestDraftService().fetchLatestDraft(thing, this::onDraftLoaded, this::logError);
 	}
 
-	private void loadResource() throws Exception {
+	private void loadPortrait() throws Exception {
 		String url =
 			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 				SessionContext.getUserId());
 
-		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession(),
-			thingScreenlet -> {
-				setPortraitSize(thingScreenlet);
-
-				return Unit.INSTANCE;
-			}, e -> showError(e.getMessage()));
-
-
+		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession());
 	}
 
 	private Unit onDraftLoaded(Thing thing) {
@@ -180,14 +161,6 @@ public class HomeActivity extends AppCompatActivity {
 		}
 
 		return Unit.INSTANCE;
-	}
-
-	private void setPortraitSize(ThingScreenlet thingScreenlet) {
-		PersonPortraitView portraitView =
-			thingScreenlet.findViewById(com.liferay.mobile.screens.R.id.image_view);
-
-		portraitView.getImageView().getLayoutParams().height = PORTRAIT_WIDTH;
-		portraitView.getImageView().getLayoutParams().width = PORTRAIT_HEIGHT;
 	}
 
 	private void setupDrawerContent(NavigationView navigationView) {
