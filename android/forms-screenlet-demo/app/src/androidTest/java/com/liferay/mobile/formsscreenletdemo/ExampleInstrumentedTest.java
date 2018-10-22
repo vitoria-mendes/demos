@@ -1,4 +1,4 @@
-package mobile.liferay.com.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("mobile.liferay.com.formsscreenletdemo", appContext.getPackageName());
+        assertEquals("com.liferay.mobile.formsscreenletdemo", appContext.getPackageName());
     }
 }
