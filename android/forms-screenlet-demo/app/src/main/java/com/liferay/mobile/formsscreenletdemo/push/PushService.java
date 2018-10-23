@@ -32,7 +32,7 @@ public class PushService extends PushNotificationsService {
 				String message = jsonObject.getString("notificationMessage");
 				String title = jsonObject.getString("from");
 
-				Intent homeIntent = new Intent(getApplicationContext().getApplicationContext(), WorkflowActivity.class);
+				Intent homeIntent = new Intent(getApplicationContext(), WorkflowActivity.class);
 				homeIntent.putExtra("workflow", jsonObject.toString());
 
 				PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, homeIntent, PendingIntent.FLAG_UPDATE_CURRENT);
