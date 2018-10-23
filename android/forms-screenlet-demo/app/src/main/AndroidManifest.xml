@@ -6,6 +6,8 @@
 	<uses-permission android:name="android.permission.CAMERA"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
 
 	<application
 		android:allowBackup="true"
@@ -55,5 +57,18 @@
 		</activity>
 		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.WorkflowActivity">
 		</activity>
+
+		<receiver
+			android:name=".push.PushReceiver"
+			android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.liferay.mobile.push" />
+			</intent-filter>
+		</receiver>
+
+		<service android:name=".push.PushService"
+			android:permission="android.permission.BIND_JOB_SERVICE"/>
+
 	</application>
 </manifest>

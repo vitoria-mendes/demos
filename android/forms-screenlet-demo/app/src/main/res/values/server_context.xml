@@ -12,4 +12,5 @@
     <string name="liferay_anonymousApiUserName">anonymous@liferay.com</string>
     <string name="liferay_anonymousApiPassword">anonymous</string>
 
+    <string name="push_sender_id">756861228038</string>
 </resources>

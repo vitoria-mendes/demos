@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:layout_gravity="center">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:elevation="@dimen/toolbar_elevation"
+		android:title="@string/insurances"
+		android:titleTextColor="@color/toolbar_text_color"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginStart="@dimen/toolbar_title_margin_left"
+			android:text="@string/workflow"
+			android:textSize="@dimen/toolbar_title_text_size"
+			/>
+
+	</android.support.v7.widget.Toolbar>
+
+	<include layout="@layout/form_detail_error_view"/>
+
+</LinearLayout>

@@ -24,6 +24,7 @@ public class SplashActivity extends AppCompatActivity {
 		new Handler().postDelayed(() -> {
 
 			LiferayScreensContext.init(this);
+			initNotificationChannels(getApplicationContext());
 			SessionContext.loadStoredCredentialsAndServer(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
 
 			if (SessionContext.hasUserInfo()) {
@@ -35,6 +36,20 @@ public class SplashActivity extends AppCompatActivity {
 			finish();
 
 		}, 2000);
+	}
+
+	public void initNotificationChannels(Context context) {
+		if (Build.VERSION.SDK_INT < 26) {
+			return;
+		}
+
+		NotificationManager notificationManager =
+			(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+		NotificationChannel channel = new NotificationChannel("default", "TGF", NotificationManager.IMPORTANCE_HIGH);
+		channel.setDescription("TGF Notifications");
+
+		notificationManager.createNotificationChannel(channel);
 	}
 
 	private void startActivity(Class<?> clazz) {

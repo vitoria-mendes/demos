@@ -60,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_home);
 		toolbar = findViewById(R.id.home_toolbar);
 		setSupportActionBar(toolbar);
+		setupForPushNotification();
 
 		Button formButton = findViewById(R.id.forms_button);
 		formButton.setOnClickListener(this::startFormActivity);
@@ -76,6 +77,28 @@ public class HomeActivity extends AppCompatActivity {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+	}
+
+	private void setupForPushNotification() {
+		Session session = SessionContext.createSessionFromCurrentSession();
+
+		try {
+			Push.with(session).withPortalVersion(71).onSuccess(jsonObject -> {
+
+				try {
+					String registrationId = jsonObject.getString("token");
+					LiferayLogger.d("Device registrationId: " + registrationId);
+				} catch (JSONException e) {
+					LiferayLogger.e(e.getMessage(), e);
+				}
+
+			}).onFailure(e -> {
+				LiferayLogger.e(e.getMessage(), e);
+			}).register(this, getString(R.string.push_sender_id));
+
+		} catch (Exception e) {
+			LiferayLogger.e(e.getMessage(), e);
 		}
 	}
 

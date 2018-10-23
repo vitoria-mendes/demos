@@ -34,4 +34,6 @@
 	<string name="you_started_a_form_at_our_website">You started a form at our website.</string>
 	<string name="your_information_was_successfully_sent">Your information was successfully sent.</string>
 	<string name="insurance_blog">Insurance Blog</string>
+	<string name="sorry_workflow_is_not_read_yet">Sorry. Workflow Screenlet is not read yet.</string>
+	<string name="workflow">Workflow</string>
 </resources>
