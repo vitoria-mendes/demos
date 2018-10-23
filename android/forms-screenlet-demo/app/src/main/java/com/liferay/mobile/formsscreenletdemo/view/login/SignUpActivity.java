@@ -1,17 +1,17 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view.login;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.auth.signup.SignUpListener;
 import com.liferay.mobile.screens.auth.signup.SignUpScreenlet;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.util.AndroidUtil;
-import com.liferay.mobile.formsscreenletdemo.R;
 
 public class SignUpActivity extends AppCompatActivity implements SignUpListener {
 

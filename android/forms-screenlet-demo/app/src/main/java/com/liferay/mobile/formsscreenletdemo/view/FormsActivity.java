@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.graphics.Color;
 import android.os.Bundle;

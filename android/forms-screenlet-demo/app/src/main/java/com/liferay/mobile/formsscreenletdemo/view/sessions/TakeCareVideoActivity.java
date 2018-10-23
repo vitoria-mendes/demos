@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view.sessions;
 
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;

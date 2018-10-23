@@ -5,7 +5,7 @@
 	android:layout_height="match_parent"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="vertical"
-	tools:context="com.liferay.mobile.formsscreenletdemo.TakeCareListActivity"
+	tools:context="com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity"
 	>
 
 	<android.support.v7.widget.Toolbar

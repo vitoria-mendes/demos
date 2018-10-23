@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view.sessions;
 
 import android.content.Intent;
 import android.graphics.Color;

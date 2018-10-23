@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,20 +18,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.liferay.apio.consumer.model.Thing;
+import com.liferay.mobile.android.service.Session;
+import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
+import com.liferay.mobile.formsscreenletdemo.util.Constants;
+import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
+import com.liferay.mobile.formsscreenletdemo.util.PersonUtil;
+import com.liferay.mobile.formsscreenletdemo.view.login.LoginActivity;
+import com.liferay.mobile.formsscreenletdemo.view.sessions.SpecialOffersActivity;
+import com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity;
+import com.liferay.mobile.formsscreenletdemo.view.sessions.BlogPostingsActivity;
+import com.liferay.mobile.push.Push;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
 import com.liferay.mobile.screens.ddm.form.service.APIOFetchLatestDraftService;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Custom;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.custom.PersonPortraitView;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
-import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
-import com.liferay.mobile.formsscreenletdemo.util.Constants;
-import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
-import com.liferay.mobile.formsscreenletdemo.util.PersonUtil;
+import org.json.JSONException;
 
 /**
  * @author Luísa Lima
@@ -145,8 +152,7 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void loadPortrait() throws Exception {
 		String url =
-			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-				SessionContext.getUserId());
+			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server), SessionContext.getUserId());
 
 		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession());
 	}
@@ -191,8 +197,8 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void setupNavigationDrawer() {
 		drawerLayout = findViewById(R.id.drawer_layout);
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-			this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+		ActionBarDrawerToggle toggle =
+			new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
 		drawerLayout.addDrawerListener(toggle);
 		toggle.syncState();
 
@@ -223,5 +229,4 @@ public class HomeActivity extends AppCompatActivity {
 		Intent intent = new Intent(HomeActivity.this, FormsActivity.class);
 		startActivity(intent);
 	}
-
 }

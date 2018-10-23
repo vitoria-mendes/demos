@@ -14,18 +14,19 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/lexicon_theme">
+
 		<activity
-			android:name="com.liferay.mobile.formsscreenletdemo.LoginActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.view.login.LoginActivity"
 			android:windowSoftInputMode="adjustResize">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.FormsActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.FormsActivity">
 		</activity>
 		<activity
-			android:name="com.liferay.mobile.formsscreenletdemo.HomeActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.view.HomeActivity"
 			android:theme="@style/TransparentTheme">
 		</activity>
 		<activity
-			android:name="com.liferay.mobile.formsscreenletdemo.SplashActivity"
+			android:name="com.liferay.mobile.formsscreenletdemo.view.SplashActivity"
 			android:fitsSystemWindows="true"
 			android:theme="@style/CustomActionBar">
 			<intent-filter>
@@ -34,23 +35,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.liferay.mobile.formsscreenletdemo.ForgotPasswordActivity"
+            android:name="com.liferay.mobile.formsscreenletdemo.view.login.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name="com.liferay.mobile.formsscreenletdemo.SignUpActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.view.login.SignUpActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name="com.liferay.mobile.formsscreenletdemo.BlogPostingsActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.view.sessions.BlogPostingsActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name="com.liferay.mobile.formsscreenletdemo.BlogPostingItemActivity"
+        <activity android:name="com.liferay.mobile.formsscreenletdemo.view.sessions.BlogPostingItemActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.TakeCareListActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.TakeCareVideoActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareVideoActivity">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.SpecialOffersActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.sessions.SpecialOffersActivity">
+		</activity>
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.WorkflowActivity">
 		</activity>
 	</application>
 </manifest>

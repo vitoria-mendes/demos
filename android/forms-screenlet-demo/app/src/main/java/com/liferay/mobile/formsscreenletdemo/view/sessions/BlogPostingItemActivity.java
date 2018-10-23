@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo;
+package com.liferay.mobile.formsscreenletdemo.view.sessions;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
