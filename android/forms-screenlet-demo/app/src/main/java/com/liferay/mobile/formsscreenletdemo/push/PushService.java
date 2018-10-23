@@ -1,5 +1,6 @@
 package com.liferay.mobile.formsscreenletdemo.push;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -31,8 +32,6 @@ public class PushService extends PushNotificationsService {
 				String message = jsonObject.getString("notificationMessage");
 				String title = jsonObject.getString("from");
 
-				Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
 				Intent homeIntent = new Intent(getApplicationContext().getApplicationContext(), WorkflowActivity.class);
 				homeIntent.putExtra("workflow", jsonObject.toString());
 
@@ -47,7 +46,7 @@ public class PushService extends PushNotificationsService {
 						.setPriority(NotificationCompat.PRIORITY_MAX)
 						.setAutoCancel(true)
 						.setContentIntent(pendingIntent)
-						.setSound(defaultSoundUri);
+						.setDefaults(Notification.DEFAULT_ALL);
 
 				NotificationManager notificationManager =
 					(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
